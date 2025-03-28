@@ -1,17 +1,12 @@
-import os
 import tweepy
 import random
 
-# Retrieve Twitter API credentials from environment variables
-API_KEY = os.getenv("API_KEY")
-API_SECRET_KEY = os.getenv("API_SECRET_KEY")
-ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
-ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
-BEARER_TOKEN = os.getenv("BEARER_TOKEN")
-
-# Validate that credentials are not None
-if not all([API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET]):
-    raise ValueError("One or more Twitter API credentials are missing. Check your environment variables.")
+# Hardcoded Twitter API credentials
+BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAEQNxQEAAAAAJayc94AArQmdujffu1oZcJaTHQc%3Dm11RCh2QqqquArqRdMEyKMLEg8nmvUTj8ehfmDd6o8aLwADy0X"
+API_KEY = "JoRYIt4dcYciMR9yJLcFkUQ8z"
+API_SECRET_KEY = "gXujJkq02RqcO9po6eFehDUPgrdn1FWUuNR0ZbADPeMjUNiBSc"
+ACCESS_TOKEN = "1834736136582774784-OdWh1pcHOgIcRYtvQfFeLW0XZ4KYPv"
+ACCESS_TOKEN_SECRET = "5ylGG5XwLtptYNRaxfhwOGNwVZmPO9hxYnocpIfUyImlb"
 
 # Authenticate with Twitter API using Tweepy
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
