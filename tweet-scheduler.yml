@@ -1,4 +1,4 @@
-name: Tweet Scheduler
+name: Tweet-Scheduler
 
 on:
   workflow_dispatch:
