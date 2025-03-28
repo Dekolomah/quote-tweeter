@@ -3,7 +3,7 @@ name: Tweet Scheduler
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '0 */6 * * *'  # Runs every 6 hours
 
 jobs:
   tweet:
@@ -20,3 +20,10 @@ jobs:
           pip install tweepy==4.14.0
       - name: Run script
         run: python main.py
+      - name: Commit index file
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add quote_index.json
+          git commit -m "Update quote index" || echo "No changes to commit"
+          git push
