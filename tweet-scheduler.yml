@@ -1,9 +1,11 @@
 name: Tweet Scheduler
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual triggering
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
+    - cron: '0 16 * * *'  # 8 AM PST (16:00 UTC)
+    - cron: '0 22 * * *'  # 2 PM PST (22:00 UTC)
+    - cron: '0 4 * * *'   # 8 PM PST (04:00 UTC next day)
 
 jobs:
   tweet:
