@@ -1,6 +1,7 @@
 import tweepy
 import json
 import os
+import datetime
 
 # API credentials (unchanged)
 bearer_token = "AAAAAAAAAAAAAAAAAAAAAEQNxQEAAAAAJayc94AArQmdujffu1oZcJaTHQc%3Dm11RCh2QqqquArqRdMEyKMLEg8nmvUTj8ehfmDd6o8aLwADy0X"
@@ -76,8 +77,13 @@ def save_index(index):
 # Main logic
 if __name__ == "__main__":
     try:
+        # Log current time for debugging
+        current_time = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+        print(f"Running at {current_time}")
+
         # Load the current index
         index = load_index()
+        print(f"Current index: {index}")
 
         # Get the current quote
         current_quote = quotes[index]
@@ -89,6 +95,7 @@ if __name__ == "__main__":
         # Increment the index and loop back if needed
         index = (index + 1) % len(quotes)
         save_index(index)
+        print(f"Next index: {index}")
 
     except Exception as e:
         print(f"Error posting tweet: {e}")
