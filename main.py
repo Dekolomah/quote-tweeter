@@ -2,7 +2,7 @@ import tweepy
 import json
 import os
 
-# API credentials
+# API credentials (unchanged)
 bearer_token = "AAAAAAAAAAAAAAAAAAAAAEQNxQEAAAAAJayc94AArQmdujffu1oZcJaTHQc%3Dm11RCh2QqqquArqRdMEyKMLEg8nmvUTj8ehfmDd6o8aLwADy0X"
 api_key = "JoRYIt4dcYciMR9yJLcFkUQ8z"
 api_secret_key = "gXujJkq02RqcO9po6eFehDUPgrdn1FWUuNR0ZbADPeMjUNiBSc"
@@ -18,7 +18,7 @@ client = tweepy.Client(
     access_token_secret=access_token_secret
 )
 
-# List of quotes
+# List of quotes (unchanged)
 quotes = [
     "If your dreams don't scare you, they're not big enough.",
     "Love yourself first, because you'll be with you forever.",
@@ -47,7 +47,7 @@ quotes = [
     "Treat others how you want to be treated"
 ]
 
-# Remove any leading or trailing whitespace and quotes from each quote
+# Remove any leading/trailing whitespace
 quotes = [quote.strip('"\n ') for quote in quotes]
 
 # File to store the current index
@@ -55,16 +55,23 @@ INDEX_FILE = "quote_index.json"
 
 # Load the current index from file, or start at 0
 def load_index():
-    if os.path.exists(INDEX_FILE):
-        with open(INDEX_FILE, 'r') as f:
-            data = json.load(f)
-            return data.get("index", 0)
-    return 0
+    try:
+        if os.path.exists(INDEX_FILE):
+            with open(INDEX_FILE, 'r') as f:
+                data = json.load(f)
+                return data.get("index", 0)
+        return 0
+    except Exception as e:
+        print(f"Error loading index: {e}")
+        return 0
 
 # Save the current index to file
 def save_index(index):
-    with open(INDEX_FILE, 'w') as f:
-        json.dump({"index": index}, f)
+    try:
+        with open(INDEX_FILE, 'w') as f:
+            json.dump({"index": index}, f)
+    except Exception as e:
+        print(f"Error saving index: {e}")
 
 # Main logic
 if __name__ == "__main__":
@@ -72,15 +79,14 @@ if __name__ == "__main__":
         # Load the current index
         index = load_index()
 
-        # Reset index if it exceeds the number of quotes
-        if index >= len(quotes):
-            index = 0
+        # Get the current quote
+        current_quote = quotes[index]
 
         # Post the tweet
-        tweet = client.create_tweet(text=quotes[index])
-        print(f"Tweet '{quotes[index]}' posted successfully. ID: {tweet.data['id']}")
+        tweet = client.create_tweet(text=current_quote)
+        print(f"Tweet '{current_quote}' posted successfully. ID: {tweet.data['id']}")
 
-        # Increment the index and save it
+        # Increment the index and loop back if needed
         index = (index + 1) % len(quotes)
         save_index(index)
 
