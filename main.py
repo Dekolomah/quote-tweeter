@@ -54,14 +54,17 @@ quotes = [quote.strip('"\n ') for quote in quotes]
 # File to store the current index
 INDEX_FILE = "quote_index.json"
 
-# Load the current index from file, or start at 0
+# Initialize index file if it doesn't exist
+if not os.path.exists(INDEX_FILE):
+    with open(INDEX_FILE, 'w') as f:
+        json.dump({"index": 0}, f)
+
+# Load the current index from file
 def load_index():
     try:
-        if os.path.exists(INDEX_FILE):
-            with open(INDEX_FILE, 'r') as f:
-                data = json.load(f)
-                return data.get("index", 0)
-        return 0
+        with open(INDEX_FILE, 'r') as f:
+            data = json.load(f)
+            return data.get("index", 0)
     except Exception as e:
         print(f"Error loading index: {e}")
         return 0
