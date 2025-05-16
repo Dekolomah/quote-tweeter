@@ -1,15 +1,17 @@
 name: Tweet Scheduler
 
 on:
-  workflow_dispatch:  # Allows manual triggering for testing
+  workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes
+    - cron: '*/2 * * * *'  # Runs every 2 minutes
 
 jobs:
   tweet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for write access
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
