@@ -1,9 +1,9 @@
 name: Tweet Scheduler
 
 on:
-  workflow_dispatch:  # Allows manual triggering for testing
+  workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes
+    - cron: '*/2 * * * *'  # Runs every 2 minutes
 
 jobs:
   tweet:
