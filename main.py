@@ -3,7 +3,7 @@ import json
 import os
 import datetime
 
-# API credentials (unchanged)
+# API credentials
 bearer_token = "AAAAAAAAAAAAAAAAAAAAAEQNxQEAAAAAJayc94AArQmdujffu1oZcJaTHQc%3Dm11RCh2QqqquArqRdMEyKMLEg8nmvUTj8ehfmDd6o8aLwADy0X"
 api_key = "JoRYIt4dcYciMR9yJLcFkUQ8z"
 api_secret_key = "gXujJkq02RqcO9po6eFehDUPgrdn1FWUuNR0ZbADPeMjUNiBSc"
@@ -19,7 +19,7 @@ client = tweepy.Client(
     access_token_secret=access_token_secret
 )
 
-# List of quotes (unchanged)
+# List of quotes
 quotes = [
     "If your dreams don't scare you, they're not big enough.",
     "Love yourself first, because you'll be with you forever.",
