@@ -19,33 +19,33 @@ client = tweepy.Client(
     access_token_secret=access_token_secret
 )
 
-# List of quotes
+# List of quotes with testing message appended
 quotes = [
-    "If your dreams don't scare you, they're not big enough.",
-    "Love yourself first, because you'll be with you forever.",
-    "In a world where you can be anything, be kind.",
-    "Every day may not be good, but there's good in every day.",
-    "In silence, we hear our loudest thoughts.",
-    "We're all stardust, so aim for the stars.",
-    "Are you brave enough to see beauty in chaos, divinity in the abyss?",
-    "Words have power. Use them wisely or they'll control you.",
-    "The opposite of love is not hate, it's indifference.",
-    "If you could time travel, which moment would you revisit?",
-    "The best camera is your memory.",
-    "Only for today, I will smile...",
-    "Who am I? A question I often ask myself.",
-    "The most beautiful things are felt, not seen or touched.",
-    "True friends are those who find common ground.",
-    "All you need sometimes is tea and a good book.",
-    "To get the universe, think vibes, not just facts.",
-    "Strengths and weaknesses, two sides of the same coin.",
-    "Nothing beats seeing your ideas become reality.",
-    "Your character speaks louder than your wealth or status.",
-    "True faith is wishing others well as you do yourself.",
-    "Speak positivity or silence is golden.",
-    "Patience is key in pain and desire alike.",
-    "Real wealth is being content with what you have.",
-    "Treat others how you want to be treated"
+    "If your dreams don't scare you, they're not big enough. (Testing my Auto Tweeting Code)",
+    "Love yourself first, because you'll be with you forever. (Testing my Auto Tweeting Code)",
+    "In a world where you can be anything, be kind. (Testing my Auto Tweeting Code)",
+    "Every day may not be good, but there's good in every day. (Testing my Auto Tweeting Code)",
+    "In silence, we hear our loudest thoughts. (Testing my Auto Tweeting Code)",
+    "We're all stardust, so aim for the stars. (Testing my Auto Tweeting Code)",
+    "Are you brave enough to see beauty in chaos, divinity in the abyss? (Testing my Auto Tweeting Code)",
+    "Words have power. Use them wisely or they'll control you. (Testing my Auto Tweeting Code)",
+    "The opposite of love is not hate, it's indifference. (Testing my Auto Tweeting Code)",
+    "If you could time travel, which moment would you revisit? (Testing my Auto Tweeting Code)",
+    "The best camera is your memory. (Testing my Auto Tweeting Code)",
+    "Only for today, I will smile... (Testing my Auto Tweeting Code)",
+    "Who am I? A question I often ask myself. (Testing my Auto Tweeting Code)",
+    "The most beautiful things are felt, not seen or touched. (Testing my Auto Tweeting Code)",
+    "True friends are those who find common ground. (Testing my Auto Tweeting Code)",
+    "All you need sometimes is tea and a good book. (Testing my Auto Tweeting Code)",
+    "To get the universe, think vibes, not just facts. (Testing my Auto Tweeting Code)",
+    "Strengths and weaknesses, two sides of the same coin. (Testing my Auto Tweeting Code)",
+    "Nothing beats seeing your ideas become reality. (Testing my Auto Tweeting Code)",
+    "Your character speaks louder than your wealth or status. (Testing my Auto Tweeting Code)",
+    "True faith is wishing others well as you do yourself. (Testing my Auto Tweeting Code)",
+    "Speak positivity or silence is golden. (Testing my Auto Tweeting Code)",
+    "Patience is key in pain and desire alike. (Testing my Auto Tweeting Code)",
+    "Real wealth is being content with what you have. (Testing my Auto Tweeting Code)",
+    "Treat others how you want to be treated (Testing my Auto Tweeting Code)"
 ]
 
 # Remove any leading/trailing whitespace
